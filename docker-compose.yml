@@ -1,0 +1,15 @@
+version: '2'
+services:
+    db:
+        image: postgres
+        volumes:
+          - .:/var/logs/postgres
+    web:
+        build: .
+        entrypoint: ./docker-entrypoint.sh
+        volumes:
+            - .:/code
+        ports:
+            - "8000:8000"
+        depends_on:
+            - db
