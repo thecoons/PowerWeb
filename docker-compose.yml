@@ -8,7 +8,8 @@ services:
     web:
         build: .
         volumes:
-            - .:/code
+          - .:/code
+          - /data/dock/hearthdeepweb/.ssh:/root/.ssh
         entrypoint: ./docker-entrypoint.sh
         ports:
             - "8084:8000"
