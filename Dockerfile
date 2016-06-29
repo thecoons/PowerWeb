@@ -6,4 +6,3 @@ ADD requirements.txt /code/
 RUN pip install -r requirements.txt
 ADD . /code/
 RUN mkdir /root/.ssh
-RUN chmod 700 /root/.ssh

@@ -13,5 +13,6 @@ services:
         entrypoint: ./docker-entrypoint.sh
         ports:
             - "8084:8000"
+            - "8085:8001"
         depends_on:
             - db
