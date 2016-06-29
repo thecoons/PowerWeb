@@ -3,8 +3,8 @@ services:
     db:
         image: postgres
         volumes:
-          - /data/dock/hearthdeepweb/log/postgres/:/var/log/postgres
-          - /data/dock/hearthdeepweb/postgres/:/var/lib/postgres
+          - /data/dock/hearthdeepweb/postgres/log:/var/log/postgresql
+          - /data/dock/hearthdeepweb/postgres/data:/var/lib/postgresql/data
     web:
         build: .
         volumes:
