@@ -34,11 +34,11 @@ router = routers.DefaultRouter()
 router.register(r'users', UserViewSet)
 
 urlpatterns = [
-    url(r'^hearthdeep/admin/', admin.site.urls),
-    url(r'^hearthdeep/', include('clientWeb.urls')),
-    url(r'^hearthdeep/accounts/', include('registration.backends.simple.urls')),
-    url(r'^hearthdeep/api-auth/', include('rest_framework.urls', namespace='rest_framework')),
-    url(r'^hearthdeep/user/', include(router.urls)),
-    url(r'^hearthdeep/api/', include('HearthDeepApi.urls')),
+    url(r'^admin/', admin.site.urls),
+    url(r'^', include('clientWeb.urls')),
+    url(r'^accounts/', include('registration.backends.simple.urls')),
+    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+    url(r'^user/', include(router.urls)),
+    url(r'^api/', include('HearthDeepApi.urls')),
     
 ]
