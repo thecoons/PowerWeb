@@ -3,12 +3,13 @@ services:
     db:
         image: postgres
         volumes:
-          - .:/var/logs/postgres
+          - /data/dock/hearthdeepweb/log/postgres/:/var/log/postgres
+          - /data/dock/hearthdeepweb/postgres/:/var/lib/postgres
     web:
         build: .
         entrypoint: ./docker-entrypoint.sh
         volumes:
-            - .:/code
+            - /data/dock/hearthdeepweb/log/:/code
         ports:
             - "8000:8000"
         depends_on:
