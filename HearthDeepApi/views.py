@@ -19,7 +19,7 @@ from rest_framework import permissions
 
 
 class HearthLogList(generics.ListCreateAPIView):
-    permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
+    permission_classes = (permissions.IsAuthenticated,)
     queryset = HearthLog.objects.all()
     serializer_class = HearthLogSerializer
 
@@ -27,7 +27,7 @@ class HearthLogList(generics.ListCreateAPIView):
         serializer.save(owner=self.request.user)
 
 class HearthLogDetail(generics.RetrieveUpdateDestroyAPIView):
-    permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
+    permission_classes = (permissions.IsAuthenticated,)
     queryset = HearthLog.objects.all()
     serializer_class = HearthLogSerializer
 
