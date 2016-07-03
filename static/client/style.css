@@ -1,0 +1,49 @@
+body{
+font-family:'Roboto';
+font-weight:300;
+}
+nav{
+z-index:20;
+position:relative
+}
+nav a{
+text-decoration: none;
+position: relative;
+}
+nav a:hover{
+text-decoration:none;
+background-color:inherit !important;
+}
+
+nav a:after{
+content: '';
+position: absolute;
+bottom: 0;
+left: 0;
+width: 0%;
+border-bottom: 2px solid white;
+transition: 0.4s;
+}
+
+nav a:hover:after {
+width: 100%;
+}
+
+#index-banner{
+min-height:450px;
+z-index:10;
+position:relative;
+background-image:url('hsboard.jpg');
+background-size:     cover;
+background-repeat:   no-repeat;
+background-position: center center;
+}
+#versions-list{
+color:black;
+}
+.row{
+padding-top:10px;
+padding-bottom:10px;
+margin-top:20px;
+margin-bottom:0px;
+}
