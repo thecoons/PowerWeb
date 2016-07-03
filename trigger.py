@@ -8,6 +8,7 @@ secret_token = "" # Fill in the secret token
 
 def trigger(request):
     os.system('git pull')
+    os.system('./manage.py collectstatic --noinput')
     os.system('skill -HUP gunicorn')
 
 def application(environ, start_response):

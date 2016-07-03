@@ -1,5 +1,4 @@
 #!/bin/bash
-python manage.py collectstatic
 python manage.py makemigrations HearthDeepApi
 python manage.py migrate                  # Apply database migrations
 echo Starting Gunicorn.

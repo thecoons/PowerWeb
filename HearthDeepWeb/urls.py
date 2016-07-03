@@ -17,6 +17,7 @@ from django.conf.urls import url, include
 from django.contrib import admin
 from django.contrib.auth.models import User
 from rest_framework import routers, serializers, viewsets
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 # Serializers define the API representation.
 class UserSerializer(serializers.HyperlinkedModelSerializer):
@@ -40,5 +41,7 @@ urlpatterns = [
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     url(r'^user/', include(router.urls)),
     url(r'^api/', include('HearthDeepApi.urls')),
-    
+
 ]
+
+urlpatterns += staticfiles_urlpatterns()
